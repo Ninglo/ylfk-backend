@@ -12,7 +12,7 @@
 
 #### 请求地址
 
-/get_action_detail/:actionId
+/get_action/:actionId
 
 #### 请求类型
 
@@ -33,11 +33,12 @@ GET
 		"msg": "ok"
 	},
 	"data": {
-		"id":"",              //动作id
-		"point":"",           //动作要点
-		"intro": "暂无",       //动作详情
-		"logo":""             //动作logo的url
-		"video":""            //动作视频的url
+		"id":"1",              //动作id
+		"name":"动作1"，
+		"point":"要点XXX",           //动作要点
+		"intro": "动作介绍",       //动作详情
+		"logo":"图片的url"             //动作logo的url
+		"video":"视频的url"            //动作视频的url
 	}
 }
 ```
