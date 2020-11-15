@@ -17,5 +17,4 @@ const courseSchema = new Schema({
     info:{ type: String, required: true }
 });
 
-//console.log(mongoose.model('course', courseSchema).findOne({'id': '123'}))
-module.exports = mongoose.model('course', courseSchema);
+module.exports = mongoose.model('courses', courseSchema);

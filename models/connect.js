@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const db = 'mongodb://localhost/test';
+const db = 'mongodb://localhost/testDB';
 
 // 导出一个方法
 exports.connect = () => {
