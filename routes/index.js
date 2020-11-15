@@ -1,7 +1,7 @@
-const router = require('koa-router')()
+const router = require('koa-router')();
 
 router.get('/', async (ctx, next) => {
-  ctx.body = 'helloworld'
-})
+  ctx.body = 'helloworld';
+});
 
-module.exports = router
+module.exports = router;
