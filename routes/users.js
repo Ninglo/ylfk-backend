@@ -50,11 +50,24 @@ router.get('/get_user_plan/:userId', async (ctx) => {
 router.post('/add_user', async (ctx, next) => {
     try {
         let user = ctx.request.body
-        let res = await userService.getPlan(user.id)
-        if (res != null) {
+        let data = await userService.getPlan(user.id)
+        if (data != null) {
+            res = { 
+                status: {
+                    "code": 500,
+                    "msg": "error"
+                }
+            }
+            ctx.body = res
             return
         }
-        res = await userService.insertUser(user)
+        await userService.insertUser(user)
+        res = {
+            status: {
+                "code": 200,
+                "msg": "ok"
+            }
+        }
         ctx.body = res
     }
     catch (e) {

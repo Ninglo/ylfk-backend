@@ -34,10 +34,10 @@ GET
 	},
 	"data": {
 		"id":"1",              //动作id
-		"name":"动作1"，
+		"name":"动作1",
 		"point":"要点XXX",           //动作要点
 		"intro": "动作介绍",       //动作详情
-		"logo":"图片的url"             //动作logo的url
+		"logo":"图片的url",            //动作logo的url
 		"video":"视频的url"            //动作视频的url
 	}
 }

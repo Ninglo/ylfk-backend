@@ -34,11 +34,24 @@ router.get('/get_action/:actionId', async (ctx) => {
 router.post('/add_action', async (ctx, next) => {
     try {
         let action = ctx.request.body
-        let res = await actionService.getAction(action.id)
-        if (res != null) {
+        let data = await actionService.getAction(action.id)
+        if (data != null) {
+            res = { 
+                status: {
+                    "code": 500,
+                    "msg": "error"
+                }
+            }
+            ctx.body = res
             return
         }
         await actionService.addAction(action)
+        res = {
+            status: {
+                "code": 200,
+                "msg": "ok"
+            }
+        }
         ctx.body = res
     }
     catch (e) {
