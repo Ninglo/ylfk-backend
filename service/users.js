@@ -2,22 +2,12 @@ const userModel = require('../models/users')
 
 class UserService {
     async getPlan(userId) {
-        try {
-            let daysPlan = await userModel.findOne({'id': userId})
-            return daysPlan
-        }
-        catch (e) {
-            console.log(e);
-        }
+        let daysPlan = await userModel.findOne({'id': userId})
+        return daysPlan
     }
 
     async insertUser(data) {
-        try {
-            let res = await userModel.create(data)
-        }
-        catch (e) {
-            console.log(e)
-        }
+        let res = await userModel.create(data)
     }
 }
 

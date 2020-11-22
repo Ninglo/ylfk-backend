@@ -2,22 +2,12 @@ const actionModel = require('../models/actions')
 
 class ActionService {
     async getAction(actionId) {
-        try {
-            let action = await actionModel.findOne({'id': actionId})
-            return action
-        }
-        catch (e) {
-            console.log(e);
-        }
+        let action = await actionModel.findOne({'id': actionId})
+        return action
     }
 
     async addAction(data) {
-        try {
-            let res = await actionModel.create(data)
-        }
-        catch (e) {
-            console.log(e)
-        }
+        let res = await actionModel.create(data)
     }
 }
 

@@ -35,15 +35,35 @@ router.get('/get_course_plan/:courseId', async (ctx, next) =>{
 router.post('/add_course', async (ctx, next) => {
     try {
         let course = ctx.request.body
-        let res = await courseService.getCourse(course.id)
-        if (res != null) {
+        let data = await courseService.getCourse(course.id)
+        if (data != null) {
+            res = { 
+                status: {
+                    "code": 500,
+                    "msg": "error"
+                }
+            }
+            ctx.body = res
             return
         }
-        res = await courseService.insertCourse(course)
+        await courseService.insertCourse(course)
+        res = {
+            status: {
+                "code": 200,
+                "msg": "ok"
+            }
+        }
         ctx.body = res
     }
     catch (e) {
-        console.log(e)
+        res = { 
+            status: {
+                "code": 500,
+                "msg": "error"
+            }
+        }
+        ctx.body = res
+        // console.log(e)
     }
 })
 module.exports = router
