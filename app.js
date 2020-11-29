@@ -7,12 +7,12 @@ const cors = require('koa2-cors')
 const userApi = require('./routes/users')
 const actionApi = require('./routes/actions')
 const courseApi = require('./routes/courses')
-
+const videoApi = require('./routes/videos')
 app.use(body({ Multipart: true }))
 app.use(cors())
 app.use(serve('./assets'))
 app.use(userApi.routes())
 app.use(courseApi.routes())
 app.use(actionApi.routes())
-
+app.use(videoApi.routes())
 module.exports = app
