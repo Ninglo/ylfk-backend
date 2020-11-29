@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const db = 'mongodb://47.96.117.8:27017/ylkf';
-// const db = 'mongodb://localhost:27017/testDB';
+const db = 'mongodb://localhost:27017/testDB';
+// const db = 'mongodb+srv://ylkf:ylkf.2020@cluster0.m4smd.mongodb.net/Cluster0?retryWrites=true&w=majority'
 
 // 导出一个方法
 exports.connect = () => {
@@ -35,7 +35,7 @@ exports.connect = () => {
                 mongoose.connect(db);
             } 
             else {
-                reject(error);
+                console.log(error);
                 throw new Error('数据库连接失败');
             }
         });
